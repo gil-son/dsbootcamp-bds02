@@ -45,7 +45,7 @@ public class CityControllerIT {
 		result.andExpect(status().isNotFound());
 	}
 
-	@Test
+	@Test		
 	public void findAllShouldReturnAllResourcesSortedByName() throws Exception {
 		
 		ResultActions result =
