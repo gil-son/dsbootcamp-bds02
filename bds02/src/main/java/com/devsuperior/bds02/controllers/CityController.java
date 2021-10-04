@@ -7,14 +7,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.bds01.dto.CityDTO;
+
 import com.devsuperior.bds02.dto.CityDTO;
 import com.devsuperior.bds02.services.CityService;
-import com.devsuperior.dscatalog.dto.CityDTO;
+
 
 
 @RestController
@@ -40,6 +42,11 @@ public class CityController {
 	}
 	
 	
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<Void> delete(@PathVariable Long id){
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
 	
 	
 }
