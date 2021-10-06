@@ -3,6 +3,8 @@ package com.devsuperior.bds02.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Sort;
@@ -44,6 +46,4 @@ public class CityService {
 			throw new DatabaseException("Integrity Violation");
 		}
 	}
-	
-	
 }
